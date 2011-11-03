@@ -1,0 +1,19 @@
+This is a quick guide to making an extension to Ruby.
+
+0. Download this skeleton of your extension. Unzip it into an empty folder.
+1. Read _build.sh_, which is a short bash script that shows you how to
+   build your extension.
+2. Read _extconf.rb_, which is the extension configuration script.
+3. The datatype `VALUE` represents EVERYTHING in Ruby. You'll need to
+   decode your data in order to work with it in C, and re-encode
+   everything in order to return it to Ruby.
+4. When you call a C function from Ruby, the first argument is the
+   receiver of the method, a `VALUE` called `self`. Basically, if you
+   want a two-argument Ruby function, you'll need three arguments in
+   the C version of it.
+5. Read _yourextension.c_. It outlines the main steps in a simple Ruby
+   extension.
+6. If you want to know more about how extensions work under the hood,
+   or if something isn't abundantly clear from the file, read the
+   ruby-docs!
+   http://ruby-doc.org/docs/ProgrammingRuby/html/ext_ruby.html!
